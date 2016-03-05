@@ -1,0 +1,25 @@
+:local(.styles) {
+  display: flex;
+  flex-direction: column;
+  background: rgb(252, 252, 252);
+
+  .glassServed{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 50px;
+    .beerJars{
+      align-self: center;
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+  .literServed{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+}
