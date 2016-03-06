@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { Motion, spring } from 'react-motion';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { HeaderCard } from '../HeaderCard';
+
 
 /* components */
 import { styles } from './assets/styles.scss';
+import { HeaderCard } from '../HeaderCard';
 
 /* actions */
 import * as actionCreators from 'actions/videogame';
