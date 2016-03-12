@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { BarChart } from 'react-d3';
-
+import { BarChart, XAxis, YAxis, CartesianGrid,
+         Tooltip, Legend, Bar } from 'recharts';
 import { HeaderCard } from '../HeaderCard';
 import { styles } from './assets/styles.scss';
 
@@ -30,15 +30,15 @@ export class Passage extends Component {
     return (
       <section className={`${styles}`}>
         <HeaderCard titleCard="Passage devant le ZStand" icon="fa-map-signs" />
-          <BarChart
-            data={barData}
-            width={500}
-            height={300}
-            fill={'#3182bd'}
-            title='Nombre de passages par heure'
-            yAxisLabel='Nombre de passages'
-            xAxisLabel='Heure de passage'
-          />
+        <BarChart width={600} height={300} data={passagesForChart}
+              margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+           <XAxis dataKey="hour"/>
+           <YAxis tickCount={6} />
+           <CartesianGrid strokeDasharray="3 3"/>
+           <Tooltip/>
+           <Legend />
+           <Bar dataKey="passages" fill="#8884d8" />
+        </BarChart>
       </section>
     );
   }

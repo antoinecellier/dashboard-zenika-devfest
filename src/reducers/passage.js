@@ -15,7 +15,7 @@ export function passage(state = initialState, action) {
                                                 (passagesByHours[x] === undefined) ? 1 : passagesByHours[x] + 1;
                                             });
       Immutable.Seq(passagesByHours).forEach((v, k) => {
-        formatedForChart.push({x: k, y: v})
+        formatedForChart.push({hour: `${k}h - ${parseInt(k) + 1}h`, passages: v})
       });
       return Immutable.Map(state)
                       .set('passagesForChart', Immutable.List(formatedForChart))
